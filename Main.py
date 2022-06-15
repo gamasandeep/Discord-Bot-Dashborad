@@ -110,7 +110,7 @@ async def check_online_users():
     
 @bot.event
 async def on_member_join(member):
-    welcome_channel = bot.get_channel(id)
+    welcome_channel = bot.get_channel(372362381340180481)
     print(f"{member} has joined!")
     await welcome_channel.send(f"{member.mention} has joined the server! Thank you")
     try:
