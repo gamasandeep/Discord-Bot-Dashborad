@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 import asyncio
 
-token = "OTgwMjY1NjEyMDk1OTQyNzU4.GXSLAD.B3qX4iQHlm8FksbCnSEtQ-D3fNzR0p0K4b5GNU"
+token = "OTQ2NzI1ODE5NjUxMzI1OTcy.G_sGOW.uDppI1uEIs6vZ14eci7btQFBt-xRXUnK7gEjaI"
 prefix = "-"
 
 bot = commands.Bot(command_prefix = prefix, intents = discord.Intents.all())
@@ -83,7 +83,7 @@ async def on_ready():
     fetch.start()
 
 
-@tasks.loop(seconds = 5)
+@tasks.loop(seconds = 15)
 async def check_online_users():
     await bot.wait_until_ready()
 
@@ -184,6 +184,8 @@ async def on_message(message):
     if not author in cache[guild]['Users']:
         cache[guild]['Users'][author] = 0
     else:
+        print("HERE")
+        print(author)
         cache[guild]['Users'][author] += 1
 
     sorted_list = sorted(cache[guild]['Users'], key=cache[guild]['Users'].get, reverse=True)
