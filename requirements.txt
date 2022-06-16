@@ -44,6 +44,5 @@ pyrsistent==0.18.1
 regex==2022.6.2
 requests==2.28.0
 streamlit==1.10.0
-tornado==6.
 urllib3==1.26.9
 
