@@ -16,7 +16,7 @@ import re
 import plotly.express as px
 from os import path
 from PIL import Image
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import os
 
 
@@ -214,23 +214,23 @@ users = px.pie(df, values=users['Total_Messages'], names=users['Users'])
 
 
 # !pip install wordcloud
-# from wordcloud import WordCloud
-# import matplotlib.pyplot as plt
-# allWords = ' '.join([twts for twts in words['words']])
-# discord_mask = np.array(Image.open(path.join(d, "discord.png")))
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+allWords = ' '.join([twts for twts in words['words']])
+discord_mask = np.array(Image.open(path.join(d, "discord.png")))
 
-# print(discord_mask)
+print(discord_mask)
 
-# wordCloud = WordCloud(background_color="black", max_words=2000, mask=discord_mask, contour_width=1, contour_color='steelblue',margin=0,scale=1.1).generate(allWords)
+wordCloud = WordCloud(background_color="black", max_words=2000, mask=discord_mask, contour_width=1, contour_color='steelblue',margin=0,scale=1.1).generate(allWords)
 
-# # plt.imshow(wordCloud, interpolation="bilinear")
-# # plt.axis('off')
-# # plt.show()
-# # plt.savefig('Plotly-World_Cloud.png')
-# fig, ax = plt.subplots(figsize = (8, 5))
-# ax.imshow(wordCloud, interpolation = "bilinear")
+# plt.imshow(wordCloud, interpolation="bilinear")
 # plt.axis('off')
-# plt.close()
+# plt.show()
+# plt.savefig('Plotly-World_Cloud.png')
+fig, ax = plt.subplots(figsize = (8, 5))
+ax.imshow(wordCloud, interpolation = "bilinear")
+plt.axis('off')
+plt.close()
 
 
 
@@ -314,7 +314,7 @@ with placeholder.container():
     st.markdown("<h3 style='text-align: center;'>Recurring Words</h3>", unsafe_allow_html=True)
     st.plotly_chart(words_freq, use_container_width=True)
     fig_col3, fig_col4, fig_col5 = st.columns(3)
-    # with fig_col4:
-    #     st.markdown("<h3 style='text-align: center;'>Recurring Words</h3>", unsafe_allow_html=True)
-    #     st.pyplot(fig, use_container_width=True)
+    with fig_col4:
+        st.markdown("<h3 style='text-align: center;'>Recurring Words</h3>", unsafe_allow_html=True)
+        st.pyplot(fig, use_container_width=True)
 
