@@ -1,5 +1,5 @@
 aiohttp==3.7.4.post0
-altair==4.2.0
+# altair==4.2.0
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 async-timeout==3.0.1
